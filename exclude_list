@@ -1,0 +1,9 @@
+.cache
+output.aux
+output.dvi
+output.fdb_latexmk
+output.fls
+output.log
+output.stdout
+output.synctex.gz
+.project-sync-state
