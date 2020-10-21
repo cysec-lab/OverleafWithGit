@@ -17,9 +17,6 @@ import git
 
 # ユーザ変数
 
-# NginxのAccessログのパス, 書き換えの必要が出るかもしれない
-NGINX_LOG_PATH = '/var/log/nginx/access.log'
-
 # OverleafのプロジェクトID, ユーザID
 # 1. latex編集画面で, デベロッパーツールを開く
 # 2. コンソールで以下の入力をして出力されるものが, プロジェクトID, ユーザID
@@ -40,6 +37,9 @@ GITHUB_USER_NAME = 'TakuKitamura'  # GitHubのID
 
 # 書き換え必須 ✅
 GITHUB_REPO_NAME = 'verified-mqtt-parser-paper'  # Overleafプロジェクトをホスティングしたいリポジトリ名
+
+# NginxのAccessログのパス, 書き換えの必要が出るかもしれない
+NGINX_LOG_PATH = '/var/log/nginx/access.log'
 
 # 書き換えが必要かもしれない
 GIT_BRANCH_NAME = 'master'  # GitHubリポジトリ上でホスティングするブランチ名
