@@ -12,6 +12,8 @@ import re
 # git 操作を可能にするパッケージ ($pip3 install GitPython)
 import git
 
+
+# TODO: コマンド引数やら, 標準入力やらで変数を書き換えるようにする
 # ユーザ変数
 
 # OverLeaf Env
@@ -156,8 +158,10 @@ if __name__ == '__main__':
             method = splited[5]
             request_path = urlparse(splited[6])[2]
             status = splited[8]
+
+            # PDFが表示されるタイミングをキャッチする
             if (
-                request_date > last_update_date and
+                request_date > last_update_date and  # 新しいRequestがAPIに飛んできた場合
                 method == 'GET' and
                 re.match(r'/project/{}/user/{}/build/.+/output/output.pdf'.format(PROJECT_ID, USER_ID), request_path) and
                 status == '200'
@@ -165,4 +169,4 @@ if __name__ == '__main__':
                 main(argc, argv)
                 print('{} -> {}\n'.format(last_update_date, request_date))
                 last_update_date = request_date
-        time.sleep(1)
+        time.sleep(1)  # ログ探査間隔
