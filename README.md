@@ -17,9 +17,9 @@ Overleaf Community 版 (https://github.com/overleaf/overleaf)
 
 - 事前にリモートリポジトリを用意する.既に存在するリポジトリでも可.なければ, 作成する
 - GitHub の個人アクセストークンを事前に所得する
-https://docs.github.com/ja/free-pro-team@latest/github/authenticating-to-github/creating-a-personal-access-token
-権限は 'repo' のみ選択すること
-トークンは厳重に扱うこと
+  https://docs.github.com/ja/free-pro-team@latest/github/authenticating-to-github/creating-a-personal-access-token
+  権限は 'repo' のみ選択すること
+  トークンは厳重に扱うこと
 
 ### CUI 操作
 
@@ -93,24 +93,27 @@ OverLeaf プロジェクト内の文書を変更し, PDF が更新されるの�
 
 > プログラムは動作しているが, リポジトリに変更が反映されない
 
-```sh
 コンテナ内でNGINX_LOG_PATHが指す先のログが正しく反映されているか確認する.
 例えば, $ tail /var/log/nginx/access.log などでログが更新されているか, NGINX_LOG_PATHが間違っていないか確認する
-```
+
 
 > OverLeaf で文書を編集する際のカーソルの位置が変だ
 
-```sh
+
 どうやら, フォントが等幅でないとそうなるんだそう.
 なので, ブラウザのフォント設定から等幅フォントを選択すればなおる.
-```
+
+
+> 日本語文書の作り方がわからない
+
+参考にさせていただきました.
+https://doratex.hatenablog.jp/entry/20180503/1525338512
 
 > プログラムが動かない
 
-```sh
 すいませんが, Pull Requestやissueください.
 まだまだ, バグはあると思います.
-```
+
 
 ## TODO
 
