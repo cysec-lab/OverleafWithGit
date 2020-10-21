@@ -15,7 +15,8 @@ Overleaf Community 版 (https://github.com/overleaf/overleaf)
 
 ### GitHub
 
-GitHub の個人アクセストークンを事前に所得する
+- 事前にリモートリポジトリを用意する.既に存在するリポジトリでも可.なければ, 作成する
+- GitHub の個人アクセストークンを事前に所得する
 https://docs.github.com/ja/free-pro-team@latest/github/authenticating-to-github/creating-a-personal-access-token
 権限は 'repo' のみ選択すること
 トークンは厳重に扱うこと
