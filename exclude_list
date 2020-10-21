@@ -6,4 +6,5 @@ output.fls
 output.log
 output.stdout
 output.synctex.gz
+output.toc
 .project-sync-state

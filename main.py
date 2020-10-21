@@ -5,7 +5,6 @@ import shutil
 import time
 from distutils.dir_util import copy_tree
 from datetime import datetime, timezone, timedelta
-from glob import glob
 from urllib.parse import urlparse
 import re
 
@@ -18,10 +17,11 @@ import git
 # OverLeaf Env
 NGINX_LOG_PATH = '/var/log/nginx/access.log'
 PROJECT_ID = '5f8d2f5e40a9cd007604f46b'
+USER_ID = '5f8f784af6e341007b878a51'
 
-# WATCH_OVERLEAF_PATHはこの正規表現で一意になりそうだけど, 要検証
-WATCH_OVERLEAF_PATH = glob(
-    '/var/lib/sharelatex/data/compiles/{}-*'.format(PROJECT_ID))[0]
+
+WATCH_OVERLEAF_PATH = '/var/lib/sharelatex/data/compiles/{}-{}'.format(
+    PROJECT_ID, USER_ID)
 
 EXCLUDE_LIST = './exclude_list'
 
@@ -159,7 +159,7 @@ if __name__ == '__main__':
             if (
                 request_date > last_update_date and
                 method == 'GET' and
-                re.match(r'/project/{}/user/.+/build/.+/output/output.pdf'.format(PROJECT_ID), request_path) and
+                re.match(r'/project/{}/user/{}/build/.+/output/output.pdf'.format(PROJECT_ID, USER_ID), request_path) and
                 status == '200'
             ):
                 main(argc, argv)
