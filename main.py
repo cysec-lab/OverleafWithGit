@@ -16,7 +16,7 @@ import git
 # ユーザ変数
 
 # OverLeaf Env
-NGINX_LOG_PATH = '/var/log/nginx/access.log.1'
+NGINX_LOG_PATH = '/var/log/nginx/access.log'
 PROJECT_ID = '5f8d2f5e40a9cd007604f46b'
 
 # WATCH_OVERLEAF_PATHはこの正規表現で一意になりそうだけど, 要検証
@@ -122,7 +122,7 @@ def main(argc: int, argv: list) -> None:
                 print_err("{}'s path is invalid".format(
                     watch_overleaf_file_or_dir))
     # ファイル変更がある場合
-    if (len(repo.index.diff(None)) > 0):
+    if (len(repo.index.diff(None)) > 0 or not os.path.isdir(COPYED_DIR_PATH)):
         print('[ADD]')
         # プロジェクト全てをステージング
         repo.git.add(all=True)
