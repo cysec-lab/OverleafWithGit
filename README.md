@@ -4,7 +4,7 @@
 - ###### Overleaf プロジェクトを編集し, PDF が出力されるタイミングでリポジトリに PUSH する
 
 Overleaf とは (https://ja.overleaf.com/)
-Overleaf Community版 (https://github.com/overleaf/overleaf)
+Overleaf Community 版 (https://github.com/overleaf/overleaf)
 
 ## 依存関係
 
@@ -81,10 +81,11 @@ machine github.com
         login TakuKitamura
         password xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 root@ffd1bee143c1:~/watchOverleaf# python3 demo.py
-root@ffd1bee143c1:~/watchOverleaf# \
+root@ffd1bee143c1:~/watchOverleaf# exit
 ```
 
-起動後, OverLeaf プロジェクト内の文書を変更し, PDF が更新されるのを確認する.そして, その変更がリポジトリ直下の `overleaf` ディレクトリに反映されていれば動作している.
+プログラム起動後, 再度 http://localhost にアクセスする.
+OverLeaf プロジェクト内の文書を変更し, PDF が更新されるのを確認する.そして, その変更がリポジトリ直下の `overleaf` ディレクトリに反映されていれば動作している.
 永続化は `$ nohup python3 demo.py &` などする
 
 ## トラブルシューティング
