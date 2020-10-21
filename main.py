@@ -192,4 +192,5 @@ if __name__ == '__main__':
                 main(argc, argv)
                 print('{} -> {}\n'.format(last_update_date, request_date))
                 last_update_date = request_date
+                break
         time.sleep(1)  # ログ探査間隔
