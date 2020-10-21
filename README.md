@@ -1,9 +1,10 @@
 # WatchOverleaf
 
-- ###### Overleaf プロジェクトを Git/GitHub での差分管理する機能を Overleaf の無償版(Community)に追加する
+- ###### Overleaf プロジェクトを Git/GitHub で差分管理する機能を Overleaf の無償版(Community)に追加する
 - ###### Overleaf プロジェクトを編集し, PDF が出力されるタイミングでリポジトリに PUSH する
 
 Overleaf とは (https://ja.overleaf.com/)
+Overleaf Community版 (https://github.com/overleaf/overleaf)
 
 ## 依存関係
 
