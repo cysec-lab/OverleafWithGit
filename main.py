@@ -122,7 +122,7 @@ def main(argc: int, argv: list) -> None:
                 print_err("{}'s path is invalid".format(
                     watch_overleaf_file_or_dir))
     # ファイル変更がある場合
-    if (len(repo.index.diff(None)) > 0 or not os.path.isdir(COPYED_DIR_PATH)):
+    if (len(repo.index.diff(None)) > 0 or len(repo.untracked_files) > 0):
         print('[ADD]')
         # プロジェクト全てをステージング
         repo.git.add(all=True)
