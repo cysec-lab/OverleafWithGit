@@ -14,31 +14,54 @@ import git
 
 
 # TODO: コマンド引数やら, 標準入力やらで変数を書き換えるようにする
+
 # ユーザ変数
 
-# OverLeaf Env
+# NginxのAccessログのパス, 書き換えの必要が出るかもしれない
 NGINX_LOG_PATH = '/var/log/nginx/access.log'
-PROJECT_ID = '5f8d2f5e40a9cd007604f46b'
-USER_ID = '5f8f784af6e341007b878a51'
+
+# OverleafのプロジェクトID, ユーザID
+# 1. latex編集画面で, デベロッパーツールを開く
+# 2. コンソールで以下の入力をして出力されるものが, プロジェクトID, ユーザID
+# > project_id
+# "5f8d2f5e40a9cd007604f46b"
+# > user_id
+# "5f8f784af6e341007b878a51"
+#
+
+# 書き換え必須 ✅
+PROJECT_ID = '5f8d2f5e40a9cd007604f46b'  # プロジェクトを一意に決める
+
+# 書き換え必須 ✅
+USER_ID = '5f8f784af6e341007b878a51'  # ユーザを一意に決める
+
+# 書き換え必須 ✅
+GITHUB_USER_NAME = 'TakuKitamura'  # GitHubのID
+
+# 書き換え必須 ✅
+GITHUB_REPO_NAME = 'verified-mqtt-parser-paper'  # Overleafプロジェクトをホスティングしたいリポジトリ名
+
+# 書き換えが必要かもしれない
+GIT_BRANCH_NAME = 'master'  # GitHubリポジトリ上でホスティングするブランチ名
+
+
+# 書き換えが必要かもしれない
+PAPER_DIR_NAME = 'overleaf'  # リポジトリルートに作成されるディレクトリ名
+
+# 書き換えが必要かもしれない
+EXCLUDE_LIST = './exclude_list'  # OverLeafプロジェクトから余計なファイルがPUSHされた場合は, ここに追加する
+
+###
 
 
 WATCH_OVERLEAF_PATH = '/var/lib/sharelatex/data/compiles/{}-{}'.format(
-    PROJECT_ID, USER_ID)
+    PROJECT_ID, USER_ID)  # OverLeafプロジェクトが保存されているPATH
 
-EXCLUDE_LIST = './exclude_list'
-
-
-# GitHub Env
-GITHUB_USER_NAME = 'TakuKitamura'
-GITHUB_REPO_NAME = 'verified-mqtt-parser-paper'
 GITHUB_REPO_URL = 'https://github.com/{}/{}.git'.format(
-    GITHUB_USER_NAME, GITHUB_REPO_NAME)
+    GITHUB_USER_NAME, GITHUB_REPO_NAME)  # ホスティング先のリポジトリ
 
-# Git Env
-GIT_BRANCH_NAME = 'master'
 
-# User Env
-PAPER_DIR_NAME = 'overleaf'
+# PUSHするディレクトリ
 COPYED_DIR_PATH = '{}/{}'.format(GITHUB_REPO_NAME, PAPER_DIR_NAME)
 
 
