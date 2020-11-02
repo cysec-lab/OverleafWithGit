@@ -3,7 +3,6 @@ import sys
 import os
 import shutil
 import time
-from distutils.dir_util import copy_tree
 from datetime import datetime, timezone, timedelta
 from urllib.parse import urlparse
 import re
@@ -142,7 +141,7 @@ def main(argc: int, argv: list) -> None:
             if os.path.isfile(watch_overleaf_file_or_dir):  # ファイルコピー
                 shutil.copy2(watch_overleaf_file_or_dir, copyed_path)
             elif os.path.isdir(watch_overleaf_file_or_dir):  # ディレクトリコピー
-                copy_tree(watch_overleaf_file_or_dir, copyed_path)
+                shutil.copytree(watch_overleaf_file_or_dir, copyed_path)
             else:
                 print_err("{}'s path is invalid".format(
                     watch_overleaf_file_or_dir))
