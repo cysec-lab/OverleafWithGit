@@ -24,10 +24,10 @@ Overleaf Community 版 (https://github.com/overleaf/overleaf)
 ### CUI 操作
 
 ```sh
-$ git clone https://github.com/TakuKitamura/watchOverleaf.git
-$ cd watchOverleaf
+$ git clone https://github.com/cysec-lab/OverleafWithGit.git
+$ cd OverleafWithGit
 $ sudo docker-compose up -d # サイズは10GB程度.削減する場合は, Latexの不要なパッケージを削除する
-$ sudo docker exec sharelatex /bin/bash -c "cd /var/www/sharelatex; grunt user:create-admin --email=admin@example.com" # Adminユーザの作成, 実行後に表示されるURLにアクセスしパスワードを設定する
+$ sudo docker exec watch-overleaf /bin/bash -c "cd /var/www/sharelatex; grunt user:create-admin --email=admin@example.com" # Adminユーザの作成, 実行後に表示されるURLにアクセスしパスワードを設定する
 $ # http://localhost に設定した認証情報でアクセスし, 適当なOverLeafプロジェクトを作成する
 $ sudo docker ps ## 出力は例
 CONTAINER ID        IMAGE                         COMMAND                  CREATED             STATUS                    PORTS                NAMES
