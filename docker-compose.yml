@@ -1,5 +1,15 @@
 version: '2.2'
 services:
+    https-portal:
+      image: steveltn/https-portal:1
+      ports:
+        - '443:443'
+      restart: always
+      environment:
+        DOMAINS: '0.0.0.0 -> http://0.0.0.0'
+        STAGE: 'local' # Don't use production until staging works
+      volumes:
+              - ~/https-portal-data:/var/lib/https-portal
     sharelatex:
         restart: always
         # Server Pro users:
@@ -146,7 +156,7 @@ services:
     #     image: jwilder/nginx-proxy
     #     container_name: nginx-proxy
     #     ports:
-    #       #- "80:80"
+    #       #- "8080:80"
     #       - "443:443"
     #     volumes:
     #       - /var/run/docker.sock:/tmp/docker.sock:ro
